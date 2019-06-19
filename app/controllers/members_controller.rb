@@ -3,6 +3,7 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.order("number")
+      .page(params[:page]).per(15)
   end
 
   def show
@@ -44,6 +45,7 @@ class MembersController < ApplicationController
 
   def search
     @members = Member.search(params[:q])
+      .page(params[:page]).per(15)
     render "index"
   end
 end
