@@ -51,6 +51,23 @@ class EntriesController < ApplicationController
     redirect_to :entries, notice: "記事を削除しました。"
   end
 
+  def like
+    @entry = Entry.published.find(params[:id])
+    current_member.voted_entries << @entry
+    redirect_to @entry, notice: "投票しました。"
+  end
+
+  def unlike
+    current_member.voted_entries.destroy(Entry.find(params[:id]))
+    redirect_to :voted_entries, notice: "削除しました。"
+  end
+
+  def voted
+    @entries = current_member.voted_entries.published
+      .order("votes.created_at DESC")
+      .page(params[:page]).per(15)
+  end
+
   private def entry_params
     params.require(:entry).permit(
       :member_id,
