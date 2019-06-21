@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'passwords/edit'
   root "top#index"
   get "about" => "top#about", as: "about"
+  get "bad_request" => "top#bad_request"
+  get "forbidden" => "top#forbidden"
+  get "internal_server_error" => "top#internal_server_error"
 
   resources :members do
     get "search", on: :collection
