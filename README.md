@@ -1,24 +1,14 @@
-# README
+# teamsite
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+野球クラブのメンバー管理，メンバーへのお知らせ，ブログ作成等ができるサイト。Ruby on Railsを使用して作成。
 
-Things you may want to cover:
+## 基本機能
+- ログイン/ログアウト機能
+- ニュース記事の作成，閲覧，編集等
+- ブログ記事の作成，閲覧，編集等
+- プロフィールの閲覧，編集等
+- 管理者権限の有無
+- ブログやプロフィールでの画像投稿
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 参考書籍
+[改訂4版 基礎Ruby on Rails](https://book.impress.co.jp/books/1117101135 "改訂4版 基礎Ruby on Rails")
